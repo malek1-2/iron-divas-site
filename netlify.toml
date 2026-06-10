@@ -1,0 +1,29 @@
+[build]
+command = "npm run build:client && npm run build:admin"
+functions = "netlify/functions"
+publish = "dist/spa"
+
+
+[functions]
+external_node_modules = ["express"]
+node_bundler = "esbuild"
+[[redirects]]
+force = true
+from = "/api/*"
+status = 200
+to = "/.netlify/functions/api/:splat"
+
+[[redirects]]
+from = "/admin"
+status = 200
+to = "/admin/index.html"
+
+[[redirects]]
+from = "/admin/*"
+status = 200
+to = "/admin/index.html"
+
+[[redirects]]
+from = "/*"
+status = 200
+to = "/index.html"
