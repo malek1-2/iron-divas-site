@@ -1,7 +1,13 @@
 {
   "buildCommand": "pnpm run build:client && pnpm run build:admin",
   "outputDirectory": "dist/spa",
+  "functions": {
+    "api/*.ts": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/admin/(.*)", "destination": "/admin/index.html" },
     { "source": "/admin", "destination": "/admin/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
