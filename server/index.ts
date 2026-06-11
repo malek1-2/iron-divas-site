@@ -8,6 +8,12 @@ export function createServer() {
   const app = express();
 
   // Middleware
+  app.use((req, _res, next) => {
+    if (Buffer.isBuffer(req.body)) {
+      req.body = JSON.parse(req.body.toString());
+    }
+    next();
+  });
   app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
@@ -25,3 +31,4 @@ export function createServer() {
 
   return app;
 }
+
