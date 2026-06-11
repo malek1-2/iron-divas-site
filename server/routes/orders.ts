@@ -26,7 +26,7 @@ export const createOrder: RequestHandler = (req, res) => {
       item.totalPrice < 0
     ))
   ) {
-    res.status(400).json({ message: "Commande invalide" });
+    res.status(400).json({ message: "Commande invalide", received: orderData, body: req.body });
     return;
   }
 
@@ -45,3 +45,4 @@ export const deleteOrder: RequestHandler = (req, res) => {
   orders = orders.filter((order) => order.id !== orderId);
   res.status(204).send();
 };
+
