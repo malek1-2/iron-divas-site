@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 
 export default function Contact() {
-  const whatsappNumber = '1234567890'; // Replace with your actual number
+  const whatsappNumber = '21621476163'; // Replace with your actual number
   const whatsappMessage = 'Bonjour Iron divas, j\'aimerais en savoir plus sur vos produits!';
   const instagramProfile = 'Iron___divas___'; // Replace with your actual profile
 
