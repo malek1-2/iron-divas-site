@@ -12,10 +12,10 @@ const products = [
     price: 25,
     currency: 'DNT',
     quantity: 12,
-    image: '/products/gym-grip-1.jpg',
+    image: '/products/gym-grip-2.jpg',
     images: [
-      '/products/gym-grip-1.jpg',
       '/products/gym-grip-2.jpg',
+      '/products/gym-grip-1.jpg',
     ],
     color: 'bg-gray-100',
     isImage: true,
@@ -358,3 +358,4 @@ export default function Products() {
     </div>
   );
 }
+
